@@ -14,13 +14,14 @@
       {{ partial "post-single" . }}
     </div>
 
+
     <nav class="pagination" role="navigation">
       {{if .NextInSection}}
-          <a class="newer-posts" href="{{ .NextInSection.RelPermalink }}">&larr; <span class="hide">Next Post</span></a>
+          <a class="newer-posts" href="{{ .NextInSection.RelPermalink }}">&larr; <span class="hide">Nächster Beitrag</span></a>
       {{end}}
       <span class="page-number">&nbsp;</span>
       {{if .PrevInSection}}
-          <a class="older-posts" href="{{ .PrevInSection.RelPermalink }}"><span class="hide">Previous Post</span> &rarr;</a>
+          <a class="older-posts" href="{{ .PrevInSection.RelPermalink }}"><span class="hide">Voriger Beitrag</span> &rarr;</a>
       {{end}}
     </nav>
 
@@ -30,7 +31,16 @@
     
     {{ partial "disqus" . }}
   </div>
+  <div class="inner">
+    <h2>Weitere Beiträge zum Thema</h2>
+  </div>
+  <div class="inner" style="padding-top: 80px">
+    <div class="post-feed">
+      {{ partial "related" . }}
+    </div>
+  </div>
 </main>
+
 
 {{if eq .Site.Params.singleViewStyle "casper"}}
 <aside class="read-next outer">
