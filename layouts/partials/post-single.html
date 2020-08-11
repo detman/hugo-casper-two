@@ -1,3 +1,4 @@
+{{ partial "debug" "partials/post-single" }}
 <article class="post-card post">
     <!--
     {{if .Params.image}}
@@ -13,16 +14,43 @@
 
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="{{ .Permalink }}">
           <header class="post-card-header">
-              {{if .Params.tags }}<span class="post-card-tags">{{ range $index, $tag := .Params.tags }}
-              #{{$tag}} {{end}} </span>
-              {{ end }}
-              <h1 class="post-card-title">{{.Title}}</h1>
+
+              <div class="post-card-tags" style="margin: 20px 0px 0px 30px;">
+                  <span><b>Rubrik</b>
+                    {{ range $index, $tag := .Params.categories }}
+                        <a href="/categories/{{ lower $tag }}/"> #{{$tag}}</a>
+                    {{end}}
+                  </span>
+                  {{if .Params.region }}
+                  <span><b>Region</b>
+                    {{ range $index, $tag := .Params.region }}
+                        <a href="/region/{{ lower $tag }}/"> #{{$tag}}</a>
+                    {{end}}
+                  </span>
+                  {{end}}
+                  <br>
+                  {{if .Params.keywords }}
+                  <span><b>Schlagwörter</b>
+                    {{ range $index, $tag := .Params.keywords }}
+                        <a href="/keywords/{{ lower $tag }}/"> #{{$tag}}</a>
+                    {{end}}
+                  </span>
+                  {{end}}
+              </div>
+
+
+              <a class="post-card-content-link" href="{{ .Permalink }}">
+
+                <h1 class="post-card-title">{{.Title}}</h1>      </a>
+              <div class="post-card-tags" style="margin: 20px 0px 0px 30px;">
+
+              </div>
           </header>
-      </a>
       <section class="post-card-excerpt" style="padding: 0 25px;">
-          {{  .Content  }}
+          <span class="post-card-tags">{{.Date.Format "2.1.2006" | safeHTML }}</span>
+
+          {{ .Content }}
       </section>
 
     </div>

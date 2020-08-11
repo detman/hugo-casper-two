@@ -1,3 +1,4 @@
+{{ partial "debug" "_default/taxonomy" }}
 {{ partial "head" . }}
 
 {{if eq .Site.Params.singleViewStyle "casper"}}
@@ -9,8 +10,13 @@
 {{end}}
 
 <main id="site-main" class="site-main outer" role="main">
+
   <div class="inner">
     <div class="post-feed">
+      <div class="post-card" style="min-height: 100px; padding-top: 20px; padding-left: 20px;">
+          {{ $thema := .Title }}
+          <h2 class="post-card-title">Alle Beiträge zum Thema {{ $thema }}</h2>
+      </div>
       {{ partial "post-list" . }}
     </div>
 

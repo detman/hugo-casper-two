@@ -1,0 +1,7 @@
+<span class="post-card-tags">
+    {{ $name := .name }}
+    <b>{{ $name }}</b>
+    {{ range $index, $tag := .var }}
+        <a href="/{{ $name }}/{{ lower $tag }}/"> #{{$tag}}</a>
+    {{end}}
+</span>

@@ -1,4 +1,11 @@
-<header class="site-header outer " {{if .Params.image}} style="background-image: url({{.Params.image | absURL}})"  {{else}} {{if .Site.Params.cover}} style="background-image: url({{.Site.Params.cover | absURL}})" {{end}} {{end}}>
+{{ $f := .Site.Params.cover }}
+{{ $img := $.Page.Resources.Match (printf "*%s*" .Params.image) }}
+{{ range $img }}
+{{ $f = .Resize "2000x" }}
+{{ $f = $f.RelPermalink }}
+{{ end }}
+<header class="site-header outer " {{if .Params.image}} style="background-image: url({{$f}})"  {{else}} {{if $.Site.Params.cover}} style="background-image: url({{$.Site.Params.cover | absURL}})" {{end}} {{end}}>
+
   <div class="inner">
     <div class="site-header-content">
       <a class="site-title" href="/post/" style="color: white;"><h1>{{ if .Site.Params.logo }}

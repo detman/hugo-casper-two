@@ -1,4 +1,7 @@
+{{ partial "debug" "_default/terms" }}
 {{ partial "head" . }}
+
+{{ .Paginator.Pages }}
 
 {{if eq .Site.Params.singleViewStyle "casper"}}
   <body class="tag-template"><div class="site-wrapper">
