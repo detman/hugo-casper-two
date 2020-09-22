@@ -8,7 +8,7 @@
         {{ $img := .Resources.Match (printf "*%s*" .Params.image) }}
         {{ range $img }}
         {{ $f = .Resize "1000x" }}
-        {{ $f = $f.RelPermalink }}
+        {{ $f = $f.Permalink }}
         {{ end }}
     <a class="post-card-image-link" href="{{ .Permalink }}">
 
