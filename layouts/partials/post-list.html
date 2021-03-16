@@ -1,5 +1,7 @@
 {{ partial "debug" "partials/post-list" }}
-{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
+
+{{ $paginator := $.Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
+
 {{ range $paginator.Pages }}
 
 <article class="post-card post">

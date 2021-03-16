@@ -47,11 +47,12 @@
 
               </div>
           </header>
-      <section class="post-card-excerpt" style="padding: 0 25px;">
-          <span class="post-card-tags">{{.Date.Format "2.1.2006" | safeHTML }}</span>
-
-          {{ .Content }}
-      </section>
+          <section class="post-card-excerpt" style="padding: 0 25px;">
+              {{if .Params.date}}
+                 <span class="post-card-tags">{{.Date.Format "2.1.2006" | safeHTML }}</span>
+              {{end}}
+              {{ .Content }}
+          </section>
 
     </div>
 </article>
