@@ -75,8 +75,9 @@ h1,h2,h3, figcaption {
     border-bottom: 2px solid white;
 }
 .nav-current{
-    border: 2px solid white;
-    border-radius: 5px;
+    #border: 2px solid white;
+    #border-radius: 5px;
+    border-bottom: 2px solid white;
 
 }
 
