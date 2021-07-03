@@ -1,3 +1,12 @@
+body, p{
+    color: #274158;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: normal;
+}
+h1,h2,h3, figcaption {
+    font-family: 'Open Sans', sans-serif;
+}
+
 .pagination {
     position: relative;
     width: 100%;
@@ -40,8 +49,32 @@
     padding-bottom: 20px !important;
 }
 
-.nav-current a:visited {
-    color: yellow;
+
+.nav li a {
+    padding: 2px 12px;
+    color: #fff;
+    opacity: .8;
+}
+.site-nav {
+    height: 40px;
+    background-color: #344d69;
+    background-color: rgba(0,0,0,0.2);
+
+    position: relative;
+    top: 100px;
+    overflow-y: visible;
+}
+.main-nav-item {
+    padding: 0px;
+    font-weight: bold;
+}
+.main-nav-item a:hover {
+    border-bottom: 2px solid white;
+}
+.nav-current{
+    border: 2px solid white;
+    border-radius: 5px;
+
 }
 
 @media (min-width: 900px) {
@@ -60,6 +93,13 @@
         font-size: 1.8rem;
         line-height: 1.55em;
     }
+    .ctsingle .post-feed li {
+        font-size: 1.8rem;
+        margin: 0 0 0 0;
+    }
+    .ctsingle .post-feed td {
+        font-size: 1.8rem;
+    }
 }
 
 @media (max-width: 650px) {
@@ -73,4 +113,240 @@
 
 .post-full-content pre code {
     color: #e5eff5;
-}    
+}
+figcaption {
+    font-weight: bold;
+    color: #4f7291;
+    text-align: center;
+    margin-bottom: 0.3em;
+}
+
+figure {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.exif-data {
+    width: fit-content;
+    margin-left: 10px;
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 0.7em;
+    line-height: 1.1;
+    display: block;
+    position:absolute;
+    bottom:0;
+    left:0;
+    background-color: #ffffff;
+    opacity: 0;
+}
+figure {
+}
+
+.post-photo {
+
+}
+.post-photo img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 10px;
+
+}
+.post-photo .exif-data:hover {
+    opacity: 0.7;
+    align-content: center;
+
+}
+
+.post-card-excerpt > table {
+    background-color: lightgray;
+    border: 6px solid lightgray;
+    margin-bottom: 2em;
+}
+
+.post-card-excerpt > table > thead > tr > th {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px;
+}
+.post-card-excerpt > table > tbody > tr > td {
+    padding: 5px;
+}
+.post-card-tags {
+    text-transform: unset;
+    #float: left;
+}
+.post-tags {
+    float: right;
+    #position: static;
+    margin-top: 1em;
+    #top: 0px;
+}
+.komoot_widget img {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+    display: block;
+}
+
+.komoot_widget a {
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    display: block;
+}
+
+.category {
+    background-color: #5a7d9c;
+    color: whitesmoke;
+    font-size: 1.2em;
+    padding: 0.2em;
+
+}
+.category a {
+    color: white;
+}
+
+.post-title {
+    color: #355975;
+    padding: 0.2em;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: rgba(255,255,255,0.7);
+    width: 100% !important;
+
+}
+.site-header-content {
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 5vh;
+}
+
+
+.post-subtitle  {
+    color: #4f7291;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    margin-top: 0.4em;
+    #clear: both;
+
+
+}
+.post-date {
+    #float: right;
+    font-style: italic;
+    margin-top: 1.5em;
+    #margin-bottom: 0.5em;
+}
+.site-header:before {
+    background-color: rgba(0,0,0,0) !important;
+}
+
+h2{
+    color: #4f7291;
+}
+
+/* hamburger nav */
+
+#hamburger
+{
+    padding: 10px;
+
+}
+
+#hamburger span
+{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #cdcdcd;
+    border-radius: 3px;
+
+    z-index: 1;
+
+}
+
+#menuToggle span:first-child
+{
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+    transform-origin: 0% 100%;
+}
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    #margin: -100px 0 0 -50px;
+    #padding: 50px;
+    #padding-top: 125px;
+    #z-index: 1000;
+    overflow: visible;
+
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: 0% 0%;
+    transform: translate(0, -100%);
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+    #padding: 10px 0;
+    #font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+    transform: none;
+}

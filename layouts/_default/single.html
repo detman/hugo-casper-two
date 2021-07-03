@@ -1,13 +1,10 @@
 {{ partial "debug" "_default/single" }}
-
 {{ partial "head" . }}
 
-{{if ne .Site.Params.singleViewStyle "casper"}}<body class="ctsingle">
-{{else}}<body class="post-template">{{end}}
-  <div class="site-wrapper"> 
+<body class="ctsingle">
+<div class="site-wrapper">
+  {{ partial "header" . }}
 
-{{if ne .Site.Params.singleViewStyle "casper"}}{{ partial "header" . }}
-{{else}}{{ partial "header-sori" . }}{{end}}
 
 <main id="site-main" class="site-main outer" role="main">
   <div class="inner">

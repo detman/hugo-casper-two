@@ -11,7 +11,9 @@
 
     <link rel="shortcut icon" href="{{ "favicon.ico" | absURL}}" />
     <link rel="canonical" href="{{ .Permalink }}" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Titillium+Web:wght@200;400&display=swap" rel="stylesheet">
     {{ if .IsPage }} <meta name="description" content="{{ .Description | default (substr .Summary 0 160) }}" /> {{ else }}
     <meta name="description" content="{{ .Site.Params.metadescription | default .Site.Params.description }}" /> {{ end }}
 

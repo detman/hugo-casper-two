@@ -1,5 +1,6 @@
+{{ partial "debug" "partial/related" }}
 
-{{ $related := .Site.RegularPages.Related . | first 15 }}
+{{ $related := .Site.RegularPages.Related . | first 6 }}
 {{ with $related }}
     {{ range . }}
 
@@ -8,7 +9,7 @@
     {{ $f := ""}}
     {{ $img := .Resources.Match (printf "*%s*" .Params.image) }}
     {{ range $img }}
-    {{ $f = .Resize "1000x" }}
+    {{ $f = .Resize "500x q50" }}
     {{ $f = $f.RelPermalink }}
     {{ end }}
     <a class="post-card-image-link" href="{{ .Permalink }}">

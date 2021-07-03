@@ -1,36 +1,45 @@
 {{ partial "debug" "_default/taxonomy" }}
 {{ partial "head" . }}
 
-{{if eq .Site.Params.singleViewStyle "casper"}}
-  <body class="tag-template"><div class="site-wrapper">
-  {{ partial "header-sori-tag" . }}
-{{else}}
-  <body class="home-template"><div class="site-wrapper">
-  {{ partial "header" . }}
-{{end}}
+<body class="home-template">
+    <div class="site-wrapper">
+    {{ partial "header" . }}
 
-<main id="site-main" class="site-main outer" role="main">
+    <main id="site-main" class="site-main outer" role="main">
 
-  <div class="inner">
-    <div class="post-feed">
-      <div class="post-card" style="min-height: 100px; padding-top: 20px; padding-left: 20px;">
-          {{ $thema := .Title }}
-          <h2 class="post-card-title">Alle Beiträge zum Thema {{ $thema }}</h2>
+      <div class="inner">
+        <div class="post-feed">
+            <!--
+
+<div class="post-card" style="min-height: 100px; padding-top: 20px; padding-left: 20px;">
+{{ $thema := .Title }}
+
+{{ if eq .Data.Singular "region" }}
+<h2 class="post-card-title">Alle Beiträge in der Region {{ $thema }}</h2>
+{{ else }}
+<h2 class="post-card-title">Alle Beiträge zum Thema {{ $thema }}</h2>
+{{ end }}
+</div>
+-->
+
+{{ partial "post-list" . }}
+</div>
+
+
+        <nav class="pagination" role="navigation">
+          {{if .Paginator.HasPrev}}
+              <a class="newer-posts" href="{{ .Paginator.Prev.URL }}">&larr; <span class="hide">zurück</span></a>
+          {{end}}
+          <span class="page-number"><span class="hide">Seite {{ .Paginator.PageNumber }} von {{.Paginator.TotalPages}}</span>&nbsp;</span>
+          {{if .Paginator.HasNext}}
+              <a class="older-posts" href="{{ .Paginator.Next.URL }}"><span class="hide">weiter</span> &rarr;</a>
+          {{end}}
+        </nav>
       </div>
-      {{ partial "post-list" . }}
+    </main>
+
+    {{ partial "footer" . }}
     </div>
-
-    <nav class="pagination" role="navigation">
-      {{if .Paginator.HasPrev}}
-          <a class="newer-posts" href="{{ .Paginator.Prev.URL }}">&larr; <span class="hide">zurück</span></a>
-      {{end}}
-      <span class="page-number"><span class="hide">Seite {{ .Paginator.PageNumber }} von {{.Paginator.TotalPages}}</span>&nbsp;</span>
-      {{if .Paginator.HasNext}}
-          <a class="older-posts" href="{{ .Paginator.Next.URL }}"><span class="hide">weiter</span> &rarr;</a>
-      {{end}}
-    </nav>
-  </div>
-</main>
-
-{{ partial "footer" . }}
-</div>{{ partial "js" . }}</body></html>
+    {{ partial "js" . }}
+</body>
+</html>
