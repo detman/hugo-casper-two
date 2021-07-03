@@ -13,3 +13,15 @@
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
 {{ end }}
+
+<script>
+  $('#hamburger').on("click",function(){
+    $('#menu').css("transform", "none");
+    $(this).addClass('active');
+  });
+
+  $('hamburger.active').on("click",function(){
+    $($branding).css("display", "block");
+    $(this).removeClass('active');
+  });
+</script>
