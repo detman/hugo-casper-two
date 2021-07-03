@@ -34,8 +34,9 @@
 
           </header>
           <section class="post-card-excerpt">
-                <p>{{ .Summary | plainify | safeHTML }}{{ if .Truncated }} ... {{end}} </p>
+              <p>{{ .Description | plainify | safeHTML }}{{ if .Truncated }}{{end}} </p>
           </section>
+
       </a>
 
     </div>
