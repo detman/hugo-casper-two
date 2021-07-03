@@ -31,18 +31,23 @@
                   <div class="post-tags">
                       <span class="category">
                         {{ range $index, $tag := .Params.categories }}
-                            <a href="/categories/{{ lower $tag }}/"> #{{  $tag}}</a>
+                            <a href="/categories/{{ lower $tag }}/"> #{{ upper $tag}}</a>
+                        {{end}}
+                      </span>
+                      <span class="region">
+                        {{ range $index, $tag := .Params.region }}
+                            <a href="/region/{{ lower $tag }}/"> #{{ lower $tag}}</a>
                         {{end}}
                       </span>
                   </div>
               {{ end }}
 
+
+
+              <h2 class="post-subtitle">{{.Description}}</h2>
               {{if .Params.date}}
               <div class="post-date">{{.Date.Format "2.1.2006" | safeHTML }}</div>
               {{end}}
-
-              <h2 class="post-subtitle">{{.Description}}</h2>
-
 
               {{ .Content }}
           </section>
