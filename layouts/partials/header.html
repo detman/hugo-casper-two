@@ -6,7 +6,6 @@
 {{ $f = $f.Filter (images.Contrast -50) }}
 {{ $f = $f.RelPermalink }}
 {{ end }}
-
 <header class="site-header outer " {{if .Params.image}} style="padding-top: 0px; background-image: url({{ $f }});"  {{else}} {{if $.Site.Params.cover}} style="padding-top: 0px; background-image: url({{$.Site.Params.cover | absURL}})" {{end}} {{end}}>
     <div class="inner">
 

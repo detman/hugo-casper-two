@@ -7,6 +7,10 @@ h1,h2,h3, figcaption {
     font-family: 'Open Sans', sans-serif;
 }
 
+h3 {
+    font-weight: bold;
+    font-size: 1em;
+}
 .pagination {
     position: relative;
     width: 100%;
@@ -177,18 +181,21 @@ figure {
 }
 
 .post-card-excerpt > table {
-    background-color: lightgray;
-    border: 6px solid lightgray;
+    background-color: #efefef;
     margin-bottom: 2em;
 }
 
 .post-card-excerpt > table > thead > tr > th {
     text-align: left;
     font-weight: bold;
+    border: 2px solid white;
+
     padding: 5px;
 }
 .post-card-excerpt > table > tbody > tr > td {
     padding: 5px;
+    border: 2px solid white;
+
 }
 .post-card-tags {
     text-transform: unset;
@@ -279,6 +286,7 @@ figure {
 
 h2{
     color: #4f7291;
+    font-size: 1.5em;
 }
 .camera {
     background-color: red;
@@ -340,7 +348,7 @@ h2{
 }
 #menu li
 {
-    #font-size: 22px;
+    font-size: 1.2em;
 }
 
 /*
